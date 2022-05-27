@@ -3,28 +3,30 @@ $fn=50*1.0;
 include <lego_beam.scad>;
 
 scale([1,1,1]) {
-    horizontal_w_hole();
+    //horizontal_w_hole();
     vertical_lego_placed();
 }
 
 module vertical_lego()
 {
     lego_beam_placed();
-    vertical_w_hole();
+    translate([4,0,-4]) {
+        vertical();
+    }
 }
 
 module lego_beam_placed()
 {
-	translate([6,24,-4]) {
+	translate([26,22,-4]) {
 		rotate([0,0,0]) {
-			lego_beam(4);
+			lego_beam(3);
 		}
 	}
-	translate([10,4,-4]) {
-		rotate([0,0,90]) {
-			lego_beam(4);
-		}
-	}
+	//translate([10,4,-4]) {
+	//	rotate([0,0,90]) {
+	//		lego_beam(4);
+	//	}
+	//}
 }
 
 module vertical_lego_placed()
@@ -39,7 +41,7 @@ module vertical_lego_placed()
 
 module vertical()
 {
-	linear_extrude(height=4, center=false, convexity=10)
+	linear_extrude(height=8, center=false, convexity=10)
 		import(file="vertical.dxf");
 }
 
@@ -67,6 +69,7 @@ module vertical_w_hole()
         }
     }
 }
+
 
 module horizontal()
 {
