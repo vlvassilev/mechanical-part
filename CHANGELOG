@@ -1,5 +1,5 @@
-lego4dinrail (1.0) buster; urgency=medium
+lego4pizero (1.0) buster; urgency=medium
 
-  * DIN rail 8 mm wide mounting bracket with 3x vertical lego technics brick
+  * Raspbery Pi Zero 1.6 mm high board with 3x vertical (parallel to the shor side) lego technics brick
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 27 May 2022 15:23:21 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sat, 28 May 2022 00:26:41 +0200
