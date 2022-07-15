@@ -17,7 +17,13 @@ scale([1,1,1]) {
 
 }
 
-
+module m4_cone_3mm()
+{
+    union() {
+        cylinder(h=3.02, r1=4/2+0.1, r2=4/2+0.1);
+        cylinder(h=2.2, r1=7.5/2+0.1, r2=4/2+0.1);
+    }
+}
 
 module vertical()
 {
@@ -26,12 +32,12 @@ module vertical()
             cube(size = [39.25*2,12,3], center = true);
         }
         union() {
-            translate([-45/2,0,-5])
-                cylinder(h=10, r1=2.1, r2=2.1);
-            translate([45/2,0,-5])
-                cylinder(h=10, r1=2.1, r2=2.1);
-            translate([0,0,-5])
-                cylinder(h=10, r1=2.1, r2=2.1);
+            translate([-45/2,0,-1.51])
+                m4_cone_3mm();
+            translate([45/2,0,-1.51])
+                m4_cone_3mm();
+            translate([0,0,-1.51])
+                m4_cone_3mm();
         }
     }
 }
