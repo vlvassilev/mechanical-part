@@ -2,109 +2,60 @@ $fn=50*1.0;
 
 include <lego_beam.scad>;
 
+// length of rack equipment mounting bracket 19 inch or 486.2 mm
+// max length of equipment body 449
+
 scale([1,1,1]) {
-    horizontal_w_hole();
-    //vertical_lego_placed();
-
-    translate([-8/2+65/2,-8+30/2,1.6]) {
-        rotate([90,0,90]) {
-            lego_beam(3);
-		}
-	}
-}
-
-module vertical_lego()
-{
-    lego_beam_placed();
-    translate([4,0,-4]) {
-        vertical();
+	translate([0,6-28.8/2-1 ,12/2-2]) {
+		rotate([90,0,0]) {
+            vertical();
+        }
     }
+    horizontal();
+
+
 }
 
-module lego_beam_placed()
-{
-	translate([26,22,-4]) {
-		rotate([0,0,0]) {
-			lego_beam(3);
-		}
-	}
-	//translate([10,4,-4]) {
-	//	rotate([0,0,90]) {
-	//		lego_beam(4);
-	//	}
-	//}
-}
-
-module vertical_lego_placed()
-{
-	translate([4,0,4]) {
-		rotate([0,-90,0]) {
-			vertical_lego();
-		}
-	}
-}
 
 
 module vertical()
 {
-	linear_extrude(height=8, center=false, convexity=10)
-		import(file="vertical.dxf");
-}
-
-module vertical_w_hole()
-{
-    cr=6.1/2; //lego hole radius
-    ch=5.1; //cilinder height 4+1.1
     difference() {
-        vertical();
         union() {
-            translate([6,4,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
-            translate([6,12,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
-            translate([6,20,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
-            translate([6,28,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
-            translate([14,28,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
-            translate([22,28,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
-            translate([30,28,-1])
-                cylinder(h=ch, r1=cr, r2=cr);
+            cube(size = [39.25*2,12,4], center = true);
+        }
+        union() {
+            translate([-45/2,0,-5])
+                cylinder(h=10, r1=2.1, r2=2.1);
+            translate([45/2,0,-5])
+                cylinder(h=10, r1=2.1, r2=2.1);
+            translate([0,0,-5])
+                cylinder(h=10, r1=2.1, r2=2.1);
         }
     }
 }
-
 
 module horizontal()
 {
-	linear_extrude(height=1.6, center=false, convexity=10)
-		import(file="horizontal.dxf");
-}
-
-module horizontal_w_hole()
-{
     difference() {
-        horizontal();
         union() {
-            translate([3.5,3.5,-1])
-                cylinder(h=5.1, r1=1.25, r2=2.75/2);
-            translate([65-3.5,3.5,-1])
-                cylinder(h=5.1, r1=1.25, r2=2.75/2);
-            translate([65-3.5,30-3.5,-1])
-                cylinder(h=5.1, r1=1.25, r2=2.75/2);
-            translate([3.5,30-3.5,-1])
-                cylinder(h=5.1, r1=1.25, r2=2.75/2);
+            cube(size = [44.5*2,16.8,4], center = true);
         }
-    }
-}
-
-module horizontal_w_hole_flipped()
-{
-	translate([4,0,4]) {
-		rotate([0,180,0]) {
-            horizontal_w_hole();
+        union() {
+            translate([-44.5+6.15,8.74-6,-5])
+                cylinder(h=10, r1=3.55, r2=3.55);
+            translate([44.5-6.15,8.74-6,-5])
+                cylinder(h=10, r1=3.55, r2=3.55);
+            union() {
+                rotate([90,0,0]) {
+                    translate([-45/2,13/4,-4])
+                       cylinder(h=12, r1=4.1, r2=4.1);
+                    translate([45/2,13/4,-4])
+                        cylinder(h=12, r1=4.1, r2=4.1);
+                    translate([0,13/4,-4])
+                        cylinder(h=12, r1=4.1, r2=4.1);
+                }
+            }
         }
     }
 }
