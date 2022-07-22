@@ -4,8 +4,13 @@ by Lightside Instruments AS.
 The project is published by Lightside Instruments AS
 under TAPR Open Hardware License.
 
-Design of a rack bracket compatible with HP, Agilient and Keysight instruments.
+Design of a front panel with c14 and 4 mm banana sockets
+compatible with MDR-60-12 AC-DC 12 Volt output DIN rail mountable
+device. Concept prototype that is too fragile for longterm use. 
 
 
 BOM:
- 3x 10 mm M4 screw
+ 1x MDR-60-12
+ 3x cable lug (6.3x0.8?)
+ 2x panel mountable 4 mm banana jacks
+ 1x c14 panel mountable connector

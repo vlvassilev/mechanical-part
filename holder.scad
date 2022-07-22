@@ -2,67 +2,75 @@ $fn=50*1.0;
 
 include <lego_beam.scad>;
 
-// length of rack equipment mounting bracket 19 inch or 486.2 mm
-// max length of equipment body 449
-// (482.6-449)/2 = 16.8
+//hook();
 
-scale([1,1,1]) {
-	translate([0,6-28.8/2-1.5 ,12/2-2]) {
-		rotate([90,0,0]) {
-            vertical();
+union () {
+    translate([0,0,-50/2+1])
+        box();
+    front_panel();
+    rotate([0,0,-90])translate([ (37/2-1-1.5/2),(51/2-3/2),0])hook_centered(50);
+    rotate([0,0,-90])translate([(37/2-1-1.5/2),-(51/2-3/2),0])hook_centered(50);
+    rotate([0,0,90])translate([(37/2-1-1.5/2),-(51/2-3/2),0])hook_centered(50);
+    rotate([0,0,90])translate([(37/2-1-1.5/2),(51/2-3/2),0])hook_centered(50);
+}
+
+module hook_centered(len)
+{
+    rotate([0,0,0])translate([-1.5/2,-3/2,-50+1.5-4])hook(len);
+}
+
+module hook(len)
+{
+    cube(size = [1.5,3,len+2], center = false);
+    translate([3.5/2,3/2,-3/2])
+    difference() {
+        cube(size = [3.5,3,3], center = true);
+        union() {
+
+                    translate([2.5,0,0])
+                        rotate([0,-45,0])
+                            cube(size = [8,3.1,3], center = true);
+
         }
     }
-    horizontal();
-
-
 }
 
-module m4_cone_3mm()
-{
-    union() {
-        cylinder(h=3.02, r1=4/2+0.1, r2=4/2+0.1);
-        cylinder(h=2.2, r1=7.5/2+0.1, r2=4/2+0.1);
-    }
-}
-
-module vertical()
+module box()
 {
     difference() {
         union() {
-            cube(size = [39.25*2,12,3], center = true);
+            cube(size = [87,37,50], center = true);
+            cube(size = [87+2+12,37+2,50-1.5*2], center = true);
+        }
+        cube(size = [87-2,37-2,50+1.5*2], center = true);
+        translate([87/2,0,1.5])
+            cube(size = [12,37-2,50-1.5*2], center = true);
+        translate([-87/2,0,1.5])
+            cube(size = [12,37-2,50-1.5*2], center = true);
+
+        translate([-87/2,0,10])
+            rotate([0,90,0])
+                cube(size = [20,27,20], center = true);
+        translate([87/2,0,-22])
+            rotate([0,90,0])
+                cube(size = [10,27,10], center = true);
+    }
+}
+
+
+
+module front_panel()
+{
+    difference() {
+        union() {
+            cube(size = [87+2+12,37+2,2], center = true);
         }
         union() {
-            translate([-45/2,0,-1.51])
-                m4_cone_3mm();
-            translate([45/2,0,-1.51])
-                m4_cone_3mm();
-            translate([0,0,-1.51])
-                m4_cone_3mm();
+            translate([35,19.05/2,-5])
+                cylinder(h=10, r1=4.1, r2=4.1);
+            translate([35,-19.05/2,-5])
+                cylinder(h=10, r1=4.1, r2=4.1);
         }
     }
 }
 
-module horizontal()
-{
-    difference() {
-        union() {
-            cube(size = [44.5*2,16.8,4], center = true);
-        }
-        union() {
-            translate([-44.5+6.15,0,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
-            translate([44.5-6.15,0,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
-            union() {
-                rotate([90,0,0]) {
-                    translate([-45/2,13/4,-20/2])
-                       cylinder(h=20, r1=4.1, r2=4.1);
-                    translate([45/2,13/4,-20/2])
-                        cylinder(h=20, r1=4.1, r2=4.1);
-                    translate([0,13/4,-20/2])
-                        cylinder(h=20, r1=4.1, r2=4.1);
-                }
-            }
-        }
-    }
-}
