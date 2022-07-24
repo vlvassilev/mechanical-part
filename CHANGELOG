@@ -1,11 +1,5 @@
-lego4pizero (1.1) bullseye; urgency=medium
+lego4pwrbrick (1.0) bullseye; urgency=medium
 
-  * Cleanup
+  * Initial
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 22 Jul 2022 19:17:34 +0200
-
-lego4pizero (1.0) buster; urgency=medium
-
-  * Raspbery Pi Zero 1.6 mm high board with 3x vertical (parallel to the shor side) lego technics brick
-
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sat, 28 May 2022 00:26:41 +0200
+ --  <vladimir@lightside-instruments.com>  Mon, 25 Jul 2022 00:23:24 +0200
