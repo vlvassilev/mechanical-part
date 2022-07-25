@@ -1,3 +1,9 @@
+rackrail-square-punched (1.0) bullseye; urgency=medium
+
+  * Initial
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Mon, 25 Jul 2022 04:14:18 +0200
+
 rackrail-threadless (1.0) buster; urgency=medium
 
   * Initial

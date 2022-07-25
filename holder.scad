@@ -2,6 +2,7 @@ $fn=50*1.0;
 
 include <lego_beam.scad>;
 
+s=0.2;
 
 scale([1,1,1]) {
 	translate([0,-20/2-3/2+3 ,20/2-2/2]) {
@@ -44,10 +45,12 @@ module horizontal()
             cube(size = [44.5,20,2], center = true);
         }
         union() {
-            translate([-44.5/2+6.35,2.5,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
-            translate([44.5/2-6.35,2.5,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
+            translate([0,2.5,0])
+                cube(size = [9+s,9+s,10], center = true);
+            translate([-44.5/2+6.35,2.5,0])
+                cube(size = [9+s,9+s,10], center = true);
+            translate([44.5/2-6.35,2.5,0])
+                cube(size = [9+s,9+s,10], center = true);
 
         }
     }
