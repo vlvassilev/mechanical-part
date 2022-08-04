@@ -7,12 +7,21 @@ include <lego_beam.scad>;
 // (482.6-449)/2 = 16.8
 
 scale([1,1,1]) {
-	translate([0,6-28.8/2-1.5 ,12/2-2]) {
+	translate([30/2-4/2,16.8/2+4/2 ,-44.5/2+20/2]) {
 		rotate([90,0,0]) {
+            horizontal();
+        }
+    }
+	translate([30/2-4/2,100/2+16.8/2+4,-44.5/2+4/2+4]) {
+		rotate([0,180,0]) {
+            vertical2();
+        }
+    }
+	translate([0,0,0]) {
+		rotate([0,90,0]) {
             vertical();
         }
     }
-    horizontal();
 
 
 }
@@ -25,44 +34,40 @@ module m4_cone_3mm()
     }
 }
 
+module horizontal()
+{
+        cube(size = [30,20,4], center = true);
+}
+
+
+
 module vertical()
 {
     difference() {
         union() {
-            cube(size = [39.25*2,12,3], center = true);
+            cube(size = [44.5,16.8,4], center = true);
         }
         union() {
-            translate([-45/2,0,-1.51])
-                m4_cone_3mm();
-            translate([45/2,0,-1.51])
-                m4_cone_3mm();
-            translate([0,0,-1.51])
-                m4_cone_3mm();
+            translate([-44.5/2+6.15,0,-5])
+                cylinder(h=10, r1=3.55, r2=3.55);
+            translate([44.5/2-6.15,0,-5])
+                cylinder(h=10, r1=3.55, r2=3.55);
+
         }
     }
 }
 
-module horizontal()
+module vertical2()
 {
     difference() {
         union() {
-            cube(size = [44.5*2,16.8,4], center = true);
+            cube(size = [30,100,4], center = true);
         }
         union() {
-            translate([-44.5+6.15,0,-5])
+            translate([0,-52/2,-5])
                 cylinder(h=10, r1=3.55, r2=3.55);
-            translate([44.5-6.15,0,-5])
+            translate([0,52/2,-5])
                 cylinder(h=10, r1=3.55, r2=3.55);
-            union() {
-                rotate([90,0,0]) {
-                    translate([-45/2,13/4,-20/2])
-                       cylinder(h=20, r1=4.1, r2=4.1);
-                    translate([45/2,13/4,-20/2])
-                        cylinder(h=20, r1=4.1, r2=4.1);
-                    translate([0,13/4,-20/2])
-                        cylinder(h=20, r1=4.1, r2=4.1);
-                }
-            }
         }
     }
 }
