@@ -1,5 +1,5 @@
-lego4pwrbrick (1.0) bullseye; urgency=medium
+lego4battery (1.0) bullseye; urgency=medium
 
-  * Initial
+  * Initial release
 
- --  <vladimir@lightside-instruments.com>  Mon, 25 Jul 2022 00:23:24 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 05 Aug 2022 02:01:27 +0200

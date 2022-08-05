@@ -4,8 +4,12 @@ by Lightside Instruments AS.
 The project is published by Lightside Instruments AS
 under TAPR Open Hardware License.
 
-Design of a 3x lego technics brick mount for 53x31x? mm power adapter brick.
+Design of a 3x lego technics brick mount for 4x 18650 battery pack with a 2x 4mm bana jacks.
 
 
 BOM:
-    N.A.
+    4x M2.5 30 mm screws
+    4x M2.5 nuts
+    2x CT2228 banana jacks
+    1x 114090052 battery holder
+    4x 18650 batteries
