@@ -1,5 +1,5 @@
-rackbracket-miniswitch (1.0) bullseye; urgency=medium
+rackbracket-cisco-819 (1.1) bullseye; urgency=medium
 
   * Initial release
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Thu, 04 Aug 2022 15:49:44 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 05 Aug 2022 14:36:54 +0200
