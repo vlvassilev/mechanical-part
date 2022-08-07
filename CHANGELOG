@@ -1,3 +1,11 @@
+lego4battery (1.1) bullseye; urgency=medium
+
+  * Fixes the front part with holes for the screws on the back side.
+  * Shortened fron part
+  * Sinked the screw heads on the front panel
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sat, 06 Aug 2022 04:06:12 +0200
+
 lego4battery (1.0) bullseye; urgency=medium
 
   * Initial release
