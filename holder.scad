@@ -1,32 +1,40 @@
 $fn=50*1.0;
 
+difference() {
+difference() {
+    cube([20,20,20], center=true);
+        cylinder(20+1,3,3,center=true);
+        rotate([90,0,0])
+            cylinder(20+1,3,3,center=true);
+        rotate([0,90,0])
+            cylinder(20+1,3,3,center=true);
+            
+}
 
-cube([20,20,5.5], center=true);
+union() {
 rotate([0,0,0])
-    translate([-10,-10,2.75])
-        plug();
+    translate([0,0,10-8+0.01])
+        cylinder(16,6,6,center=true);
+rotate([90,0,0])
+    translate([0,0,10-8+0.01])
+        cylinder(16,6,6,center=true);
 
-rotate([00,00,90])
-    translate([-10,-10,2.75])
-        plug();
+rotate([0,90,0])
+    translate([0,0,10-8+0.01])
+        cylinder(16,6,6,center=true);
+}
+/*cone heads*/
+union() {
+    translate([0,0,-10+4/2])
+        cylinder(4+0.1,3,6,center=true);
 
-rotate([0,0,180])
-    translate([-10,10,20-2.75])
-        rotate([-90,0,0])
-            plug();
+    rotate([90,0,0])
+        translate([0,0,-10+4/2])
+            cylinder(4+0.1,3,6,center=true);
 
-rotate([00,00,270])
-    translate([-10,10,20-2.75])
-        rotate([-90,0,0])
-            plug();
+    rotate([0,90,0])
+        translate([0,0,-10+4/2])
+            cylinder(4+0.1,3,6,center=true);
 
-module plug(height)
-{
-    difference() {
-        linear_extrude(height=14.5, center=false, convexity=10)
-            import(file="vertical.dxf");
-        rotate([-90,0,0])
-            translate([10,-10,20-5.5/2])
-            cylinder(h=5.5+1,r=2, center=true);
-    }
+}
 }

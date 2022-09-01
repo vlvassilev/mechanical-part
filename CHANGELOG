@@ -1,5 +1,5 @@
-aluprofile-joint-3way-plate (1.0) stable; urgency=medium
+aluprofile-joint-3way-cube-1.0 (1.1) bullseye; urgency=medium
 
   * Initial
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Thu, 01 Sep 2022 15:35:15 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 02 Sep 2022 00:51:24 +0200
