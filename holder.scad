@@ -1,5 +1,6 @@
 $fn=50*1.0;
 
+union() {
 difference() {
 difference() {
     cube([20,20,20], center=true);
@@ -37,4 +38,31 @@ union() {
             cylinder(4+0.1,3,6,center=true);
 
 }
+}
+    translate([4,10,10-3])
+        sphere(1);
+    translate([-4,10,10-3])
+        sphere(1);
+    translate([4,10,-10+3])
+        sphere(1);
+    translate([-4,10,-10+3])
+        sphere(1);
+
+    translate([4,10-3,-10])
+        sphere(1);
+    translate([-4,10-3,-10])
+        sphere(1);
+    translate([4,-10+3,-10])
+        sphere(1);
+    translate([-4,-10+3,-10])
+        sphere(1);
+
+    translate([-10,10-3, 4])
+        sphere(1);
+    translate([-10,10-3, -4])
+        sphere(1);
+    translate([-10,-10+3, 4])
+        sphere(1);
+    translate([-10,-10+3, -4])
+        sphere(1);
 }

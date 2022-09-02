@@ -1,3 +1,9 @@
+aluprofile-joint-3way-cube-1.0 (2.0) bullseye; urgency=medium
+
+  * Added positioning pins in order to fix the problem with the rotating profiles.
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 02 Sep 2022 03:00:14 +0200
+
 aluprofile-joint-3way-cube-1.0 (1.1) bullseye; urgency=medium
 
   * Initial
