@@ -7,17 +7,43 @@ include <lego_beam.scad>;
 // (482.6-449)/2 = 16.8
 
 scale([1,1,1]) {
-	translate([30/2-4/2,16.8/2+4/2 ,-44.5/2+20/2]) {
+
+	translate([30/2-4/2,16.8/2+4/2,-44.5/2+20/2]) {
 		rotate([90,0,0]) {
             horizontal();
         }
     }
-	translate([30/2-4/2,100/2+16.8/2+4,-44.5/2+4/2+4]) {
+
+	translate([30/2-4/2,241.30-16.8-4/2,-44.5/2+20/2]) {
+		rotate([90,0,0]) {
+            horizontal();
+        }
+    }
+
+	translate([(30+27)/2-4/2,100/2+16.8/2+4,-44.5/2+4/2+4+4]) {
 		rotate([0,180,0]) {
             vertical2();
         }
     }
+
+	translate([(30+27)/2-4/2,241.30-100/2-16.8-4,-44.5/2+4/2+4+4]) {
+		rotate([0,180,0]) {
+            vertical2();
+        }
+    }
+
+/*join*/
+    translate([30/2-4/2,241.30/2,-44.5/2+4/2+4+4])
+        cube(size = [30,20,4], center = true);
+/*left side*/
 	translate([0,0,0]) {
+		rotate([0,90,0]) {
+            vertical();
+        }
+    }
+
+/*right side*/    
+	translate([0,241.30-16.8/2,0]) {
 		rotate([0,90,0]) {
             vertical();
         }
@@ -61,12 +87,17 @@ module vertical2()
 {
     difference() {
         union() {
-            cube(size = [30,100,4], center = true);
+            translate([27/2,0,-0])
+                cube(size = [30,100,4], center = true);
+            translate([27-55/2,-52/2,-0])
+                cube(size = [50,10,4], center = true);
+            translate([27-55/2, 52/2,-0])
+                cube(size = [50,10,4], center = true);
         }
         union() {
-            translate([0,-52/2,-5])
+            translate([-27/2,-52/2,-5])
                 cylinder(h=10, r1=3.55, r2=3.55);
-            translate([0,52/2,-5])
+            translate([-27/2,52/2,-5])
                 cylinder(h=10, r1=3.55, r2=3.55);
         }
     }
