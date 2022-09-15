@@ -2,38 +2,36 @@
 
 include <lego_beam.scad>;
 
-// length of rack equipment mounting bracket 19 inch or 486.2 mm
-// max length of equipment body 449
-// (482.6-449)/2 = 16.8
+
+bracket_len=486.2; // length of rack equipment mounting bracket 19 inch
+bracket_height = 44; // actually 44.45 mm 1.75 inch
+body_len=449; // max length of equipment body
+ear_len=(bracket_len-body_len)/2; //18.6
 
 scale([1,1,1]) {
 
-	translate([30/2-4/2,16.8/2+4/2,-44.5/2+20/2]) {
+	translate([30/2-4/2,ear_len/2+4/2,-bracket_height/2+20/2]) {
 		rotate([90,0,0]) {
             horizontal();
         }
     }
 
-	translate([30/2-4/2,243.10-1.5*16.8-4/2,-44.5/2+20/2]) {
+	translate([30/2-4/2,bracket_len/4-1.5*ear_len-4/2,-bracket_height/2+20/2]) {
 		rotate([90,0,0]) {
             horizontal();
         }
     }
 
-	translate([(30+27)/2-4/2,100/2+16.8/2+4,-44.5/2+4/2+4+4]) {
+	translate([-4/2,(bracket_len/4-2*ear_len-2*4)/2+ear_len/2+4,-bracket_height/2+4/2]) {
 		rotate([0,180,0]) {
             vertical2();
         }
     }
 
-	translate([(30+27)/2-4/2,243.10-100/2-1.5*16.8-4,-44.5/2+4/2+4+4]) {
-		rotate([0,180,0]) {
-            vertical2();
-        }
-    }
+
 
 /*join*/
-    translate([30/2-4/2,243.10/2,-44.5/2+4/2+4+4])
+    translate([30/2-4/2,bracket_len/4/2-20/2,-bracket_height/2+4/2])
         cube(size = [30,20,4], center = true);
 
 /*left side*/
@@ -44,7 +42,7 @@ scale([1,1,1]) {
     }
 
 /*right side*/    
-	translate([0,243.10-16.8,0]) {
+	translate([0,bracket_len/4-ear_len,0]) {
 		rotate([0,90,0]) {
             vertical();
         }
@@ -72,12 +70,12 @@ module vertical()
 {
     difference() {
         union() {
-            cube(size = [44.5,16.8,4], center = true);
+            cube(size = [bracket_height,ear_len,4], center = true);
         }
         union() {
-            translate([-44.5/2+6.15,0,-5])
+            translate([-bracket_height/2+6.15,0,-5])
                 cylinder(h=10, r1=3.55, r2=3.55);
-            translate([44.5/2-6.15,0,-5])
+            translate([bracket_height/2-6.15,0,-5])
                 cylinder(h=10, r1=3.55, r2=3.55);
 
         }
@@ -88,18 +86,30 @@ module vertical2()
 {
     difference() {
         union() {
-            translate([27/2,0,-0])
-                cube(size = [30,100,4], center = true);
-            translate([27-55/2,-52/2,-0])
-                cube(size = [50,10,4], center = true);
-            translate([27-55/2, 52/2,-0])
-                cube(size = [50,10,4], center = true);
+            translate([-30/2,0,-0])
+                cube(size = [30,bracket_len/4-2*ear_len-2*4,4], center = true);
+            translate([-(85+4)/2,-49/2,-0])
+                cube(size = [85+4,10,4], center = true);
+            translate([-(85+4)/2, 49/2,-0])
+                cube(size = [85+4,10,4], center = true);
         }
         union() {
-            translate([-27/2,-52/2,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
-            translate([-27/2,52/2,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
+            translate([-(85-3.5-58),-49/2,-5])
+                cylinder(h=10, r1=1.25, r2=1.25);
+            translate([-(85-3.5-58),-49/2,0.01])
+                cylinder(h=2, r1=3, r2=3);
+            translate([-(85-3.5-58),49/2,-5])
+                cylinder(h=10, r1=1.25, r2=1.25);
+            translate([-(85-3.5-58),49/2,0.01])
+                cylinder(h=2, r1=3, r2=3);
+            translate([-(85-3.5),-49/2,-5])
+                cylinder(h=10, r1=1.25, r2=1.25);
+            translate([-(85-3.5),-49/2,0.01])
+                cylinder(h=10, r1=3, r2=3);
+            translate([-(85-3.5),49/2,-5])
+                cylinder(h=10, r1=1.25, r2=1.25);
+            translate([-(85-3.5),49/2,0.01])
+                cylinder(h=10, r1=3, r2=3);
         }
     }
 }

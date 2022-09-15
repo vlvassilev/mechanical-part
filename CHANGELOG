@@ -1,11 +1,5 @@
-rackbracket-double-miniswitch (1.1) bullseye; urgency=medium
+rackbracket-pi (1.0) bullseye; urgency=medium
 
-  * Fixed bug resulting in shorter lenght was 241.3 now 243.1 mm
+  * Initial
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Thu, 15 Sep 2022 12:20:23 +0200
-
-rackbracket-double-miniswitch (1.0) bullseye; urgency=medium
-
-  * Initial release
-
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Tue, 06 Sep 2022 04:00:47 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Thu, 15 Sep 2022 16:59:49 +0200
