@@ -8,8 +8,12 @@ bracket_height = 44; // actually 44.45 mm 1.75 inch
 body_len=449; // max length of equipment body
 ear_len=(bracket_len-body_len)/2; //18.6
 
-scale([1,1,1]) {
+horizontal_offset_from_end = 0.625*25.4/2; //0.625 inch is the side rail and the hole is in the middle
+vertical_hole_distance = 31.75;
+mounting_hole_radius = 3.55;
 
+
+/*
 	translate([30/2-4/2,ear_len/2+4/2,-bracket_height/2+20/2]) {
 		rotate([90,0,0]) {
             horizontal();
@@ -27,30 +31,76 @@ scale([1,1,1]) {
             vertical2();
         }
     }
-
-
-
+}
+*/
+union() {
+difference() {
+    union() {
 /*join*/
-    translate([30/2-4/2,bracket_len/4/2-20/2,-bracket_height/2+4/2])
-        cube(size = [30,20,4], center = true);
+        cube(size = [4,bracket_len/4-2*ear_len,bracket_height], center = true);
 
 /*left side*/
-	translate([0,0,0]) {
-		rotate([0,90,0]) {
-            vertical();
+	    translate([0,-(bracket_len/4/2-ear_len/2),0]) {
+		    rotate([0,90,0]) {
+                vertical();
+            }
         }
-    }
 
 /*right side*/    
-	translate([0,bracket_len/4-ear_len,0]) {
-		rotate([0,90,0]) {
-            vertical();
+	    translate([0,bracket_len/4/2-ear_len/2,0]) {
+		    rotate([0,90,0]) {
+                vertical();
+            }
         }
+         translate([2+5/2,75/2,31/2])
+            rotate([0,90,0])
+                cylinder(h=5, r1=3, r2=3, center=true);
+         translate([2+5/2,-75/2,31/2])
+            rotate([0,90,0])
+                cylinder(h=5, r1=3, r2=3, center=true);
+         translate([2+5/2,-75/2,-31/2])
+            rotate([0,90,0])
+                cylinder(h=5, r1=3, r2=3, center=true);
+         translate([2+5/2,75/2,-31/2])
+            rotate([0,90,0])
+                cylinder(h=5, r1=3, r2=3, center=true);
+
     }
 
+    union() {
+        cube(size = [10,71.2,25.2], center = true);
+        translate([0,75/2,31/2])
+            rotate([0,90,0])
+                cylinder(h=20, r1=1.25, r2=1.25, center=true);
 
+        translate([0,-75/2,31/2])
+            rotate([0,90,0])
+                cylinder(h=20, r1=1.25, r2=1.25, center=true);
+
+        translate([0,-75/2,-31/2])
+            rotate([0,90,0])
+                cylinder(h=20, r1=1.25, r2=1.25, center=true);
+
+        translate([0,75/2,-31/2])
+            rotate([0,90,0])
+                cylinder(h=20, r1=1.25, r2=1.25, center=true);
+
+    }
 }
-
+    /* This section can be moved to the difference section above so that M2.5 screws can be used from the front to the back instead of self tapping from the back */
+        translate([-1,75/2,31/2])
+            rotate([0,90,0])
+                cylinder(h=2, r1=3, r2=3, center=true);
+        translate([-1,-75/2,31/2])
+            rotate([0,90,0])
+                cylinder(h=2, r1=3, r2=3, center=true);
+        translate([-1,-75/2,-31/2])
+            rotate([0,90,0])
+                cylinder(h=2, r1=3, r2=3, center=true);
+        translate([-1,75/2,-31/2])
+            rotate([0,90,0])
+                cylinder(h=2, r1=3, r2=3, center=true);
+}
 module m4_cone_3mm()
 {
     union() {
@@ -73,10 +123,11 @@ module vertical()
             cube(size = [bracket_height,ear_len,4], center = true);
         }
         union() {
-            translate([-bracket_height/2+6.15,0,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
-            translate([bracket_height/2-6.15,0,-5])
-                cylinder(h=10, r1=3.55, r2=3.55);
+            translate([-vertical_hole_distance/2,0,-5])
+                cylinder(h=10, r1=mounting_hole_radius, r2=mounting_hole_radius);
+
+            translate([vertical_hole_distance/2,0,-5])
+                cylinder(h=10, r1=mounting_hole_radius, r2=mounting_hole_radius);
 
         }
     }
