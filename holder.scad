@@ -24,13 +24,13 @@ module joint()
         cube(size = [bracket_height,ear_len*2,4], center = true);
  
         union() {
-            translate([vertical_hole_distance/2,ear_len - horizontal_offset_from_end,-4])
+            translate([vertical_hole_distance/2, horizontal_offset_from_end,-4])
                 cylinder(h=10, r1=mounting_hole_radius, r2=mounting_hole_radius);
-            translate([-vertical_hole_distance/2,ear_len - horizontal_offset_from_end,-4])
+            translate([-vertical_hole_distance/2, horizontal_offset_from_end,-4])
                 cylinder(h=10, r1=mounting_hole_radius, r2=mounting_hole_radius);
-            translate([-vertical_hole_distance/2,-(ear_len - horizontal_offset_from_end),-4])
+            translate([-vertical_hole_distance/2,-(horizontal_offset_from_end),-4])
                 cylinder(h=10, r1=mounting_hole_radius, r2=mounting_hole_radius);
-            translate([vertical_hole_distance/2,-(ear_len - horizontal_offset_from_end),-4])
+            translate([vertical_hole_distance/2,-(horizontal_offset_from_end),-4])
                 cylinder(h=10, r1=mounting_hole_radius, r2=mounting_hole_radius);
         }
     }
