@@ -1,5 +1,5 @@
-rackbracket-pi (1.0) bullseye; urgency=medium
+rackbracket-pdu-iec (1.0) bullseye; urgency=medium
 
   * Initial
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Thu, 15 Sep 2022 16:59:49 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Fri, 28 Oct 2022 16:09:50 +0200
