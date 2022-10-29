@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5708"
+   sodipodi:docname="side-longer.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1032"
+     id="namedview8867"
+     showgrid="false"
+     inkscape:zoom="1.0764028"
+     inkscape:cx="317.43605"
+     inkscape:cy="203.66051"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5708" />
+  <defs
+     id="defs5702" />
+  <metadata
+     id="metadata5705">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     id="rect2139-6-1"
+     style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-miterlimit:3.59854;stroke-dasharray:none;stroke-dashoffset:5;stroke-opacity:1"
+     d="m 0.05,40.05014 h 4.00028 v 4.00027 h 3.99975 v -4.00027 h 4.00027 v 4.00027 h 3.99976 v -4.00027 h 4.00027 v 4.00027 h 3.99976 v -4.00027 h 4.00027 v 4.00027 h 3.99976 v -4.00027 h 4.00027 v 4.00027 h 3.99975 v -4.00027 h 4.00027 v 4.00027 h 3.99976 v -4.00027 h 4.00029 v 4.00027 h 3.99973 v -4.00027 h 4.00029 v 4.00027 h 3.99976 V 40.05014 H 68.05 v 4.00027 h 4.00026 v -4.00027 h 3.99976 v 4.00027 h 4.00026 v -4.00027 h 3.99976 v 4.00027 h 4.00029 v -4.00027 h 3.99973 v 4.00027 h 4.00029 v -4.00027 h 3.99976 v 4.00027 h 4.00026 v -4.00027 h 3.99976 v 4.00027 h 4.00026 v -4.00027 h 3.99976 V 4.05027 h -3.99976 V 0.05 h -4.00026 v 4.00027 h -3.99976 V 0.05 h -4.00026 V 4.05027 H 96.05035 V 0.05 H 92.05006 V 4.05027 H 88.05033 V 0.05 H 84.05004 V 4.05027 H 80.05028 V 0.05 H 76.05002 V 4.05027 H 72.05026 V 0.05 H 68.05 V 4.05027 H 64.05024 V 0.05 H 60.05048 V 4.05027 H 56.05019 V 0.05 H 52.05046 V 4.05027 H 48.05017 V 0.05 H 44.05041 V 4.05027 H 40.05014 V 0.05 H 36.05039 V 4.05027 H 32.05012 V 0.05 H 28.05036 V 4.05027 H 24.05009 V 0.05 H 20.05033 V 4.05027 H 16.05006 V 0.05 H 12.0503 V 4.05027 H 8.05003 V 0.05 H 4.05028 V 4.05027 H 0.05 Z" />
+</svg>

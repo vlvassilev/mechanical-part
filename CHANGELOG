@@ -1,3 +1,9 @@
+rackbracket-pdu-iec (1.2) bullseye; urgency=medium
+
+  * Added deeper bottom and side parts alternative matching spark
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sat, 29 Oct 2022 18:10:21 +0200
+
 rackbracket-pdu-iec (1.1) bullseye; urgency=medium
 
   * Corrected the back plate that had unaligned teeth
