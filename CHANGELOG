@@ -1,3 +1,9 @@
+rackbracket-pdu-iec (1.1) bullseye; urgency=medium
+
+  * Corrected the back plate that had unaligned teeth
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sat, 29 Oct 2022 16:03:03 +0200
+
 rackbracket-pdu-iec (1.0) bullseye; urgency=medium
 
   * Initial
