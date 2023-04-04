@@ -1,5 +1,6 @@
-lego4pizero (1.0) buster; urgency=medium
+lego4pizero-axle (1.0) jammy; urgency=medium
 
-  * Raspbery Pi Zero 1.6 mm high board with 3x vertical (parallel to the shor side) lego technics brick
+  * Replaced the 3 unit long horizontal standard hole beam with vertical single unit axel hole
+  * Added layout_str parameter to lego_beam e.g. lego_beam(3,"oo+oo")
 
- -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sat, 28 May 2022 00:26:41 +0200
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Tue, 04 Apr 2023 20:33:36 +0200

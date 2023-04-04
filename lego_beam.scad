@@ -23,7 +23,7 @@ module body(beam_len)
     }
 }
 
-module hole(beam_len)
+module hole()
 {
     union()
 	{
@@ -43,7 +43,19 @@ module hole(beam_len)
     }
 }
 
-module lego_beam(beam_len)
+axel_gap = 1.95;
+axel_length = 5.1;
+module hole_axle()
+{
+    translate([0,0,2+height/2])
+        union()
+	{
+            cube([axel_gap,axel_length,height+2], center = true);
+            cube([axel_length,axel_gap,height+2], center = true);
+        }
+}
+
+module lego_beam(beam_len, layout_str)
 {
     difference()
     {
@@ -51,8 +63,13 @@ module lego_beam(beam_len)
        
         for (i = [1:beam_len])
         {
-            translate([(i-1)*pitch, width/2, 0])
-                hole(beam_len);
+            translate([(i-1)*pitch, width/2, 0]) {
+                if(layout_str[i-1] == "+") {
+                    hole_axle();
+                } else {
+                    hole();
+                }
+            }
         }
     }
 }

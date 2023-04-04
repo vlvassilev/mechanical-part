@@ -6,9 +6,9 @@ scale([1,1,1]) {
     horizontal_w_hole();
     //vertical_lego_placed();
 
-    translate([-8/2+65/2,-8+30/2,1.6]) {
-        rotate([90,0,90]) {
-            lego_beam(3);
+    translate([65/2,-8/2+30/2,1.6]) {
+        rotate([0,0,0]) {
+            lego_beam(1,"+");
 		}
 	}
 }
@@ -21,7 +21,7 @@ module vertical_lego()
     }
 }
 
-module lego_beam_placed()
+module  lego_beam_placed()
 {
 	translate([26,22,-4]) {
 		rotate([0,0,0]) {
