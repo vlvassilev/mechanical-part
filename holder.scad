@@ -3,16 +3,25 @@ $fn=50*1.0;
 include <lego_beam.scad>;
 
 s=0.2;
+u=5; /* replace with desired unit height e.g. u=5 generates U5 high rail */
 
-scale([1,1,1]) {
-	translate([0,-20/2-3/2+3 ,20/2-2/2]) {
-		rotate([90,0,0]) {
-            vertical();
-        }
+for (i = [0:u-1]) {
+    translate([i*44.45,0,0]) {
+        ux1();
     }
-    horizontal();
+}
 
 
+module ux1()
+{
+    scale([1,1,1]) {
+	    translate([0,-20/2-3/2+3 ,20/2-2/2]) {
+		    rotate([90,0,0]) {
+                vertical();
+            }
+        }
+        horizontal();
+    }
 }
 
 module m4_cone_3mm()

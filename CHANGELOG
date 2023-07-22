@@ -1,3 +1,9 @@
+rackrail-square-punched (1.1) bullseye; urgency=medium
+
+  * Parameterized height default is 5U
+
+ -- Vladimir Vassilev <vladimir@lightside-instruments.com>  Sun, 23 Jul 2023 00:29:12 +0200
+
 rackrail-square-punched (1.0) bullseye; urgency=medium
 
   * Initial
