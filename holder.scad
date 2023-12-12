@@ -7,7 +7,7 @@ include <lego_beam.scad>;
 // (482.6-449)/2 = 16.8
 
 scale([1,1,1]) {
-	translate([0, -24/2-1.5,3]) {
+	translate([0, -16/2-1.5,3]) {
 		rotate([90,0,0]) {
             vertical();
         }
@@ -46,7 +46,7 @@ module horizontal()
 {
     difference() {
         union() {
-            cube(size = [44.5*2,24,6], center = true);
+            cube(size = [44.5*2,16,6], center = true);
         }
         union() {
             translate([-44.5+6.15,0,-5])
